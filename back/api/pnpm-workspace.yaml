@@ -1,0 +1,4 @@
+allowBuilds:
+  '@nestjs/core': false
+  puppeteer: false
+  unrs-resolver: false
