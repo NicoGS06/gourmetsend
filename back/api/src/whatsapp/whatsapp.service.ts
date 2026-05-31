@@ -66,6 +66,7 @@ export class WhatsappService implements OnModuleInit, OnModuleDestroy {
   ],
 }
 
+
 });
 
     this.client.on('qr', (qr) => {
