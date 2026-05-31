@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Builds
+dist/
+build/
+
+# Sesiones de WhatsApp
+sessions/
+
+# Archivos de entorno (claves privadas)
+.env
+.env.local
+.env.production
+.env.development
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema
+.DS_Store
