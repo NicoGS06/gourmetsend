@@ -3,6 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { SupabaseService } from '../database/supabase.service';
 import { Client, LocalAuth, MessageMedia } from 'whatsapp-web.js';
 import * as qrcodeTerminal from 'qrcode-terminal';
+import puppeteer = require('puppeteer');
 
 @Injectable()
 export class WhatsappService implements OnModuleInit, OnModuleDestroy {
@@ -53,6 +54,7 @@ export class WhatsappService implements OnModuleInit, OnModuleDestroy {
   }),
   puppeteer: {
   headless: true,
+  executablePath: puppeteer.executablePath(),,
   args: [
     '--no-sandbox',
     '--disable-setuid-sandbox',
