@@ -21,3 +21,6 @@ yarn-error.log*
 
 # Sistema
 .DS_Store
+# Ignorar sesiones de WhatsApp
+back/api/.wwebjs_auth/
+sessions/
