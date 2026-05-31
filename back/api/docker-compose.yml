@@ -1,0 +1,9 @@
+services:
+  gourmet-backend:
+    build: .
+    container_name: gourmet-backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./sessions/whatsapp:/usr/src/app/sessions/whatsapp
+    restart: unless-stopped

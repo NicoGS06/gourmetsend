@@ -1,6 +1,7 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import ws from 'ws';
 
 @Injectable()
 export class SupabaseService implements OnModuleInit {
@@ -18,7 +19,11 @@ export class SupabaseService implements OnModuleInit {
       );
     }
 
-    this.supabaseClient = createClient(supabaseUrl, supabaseKey);
+    this.supabaseClient = createClient(supabaseUrl, supabaseKey, {
+      realtime: {
+        transport: ws,
+      },
+    });
   }
 
   getClient(): SupabaseClient {

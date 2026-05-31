@@ -49,21 +49,23 @@ export class WhatsappService implements OnModuleInit, OnModuleDestroy {
     this.client = new Client({
       authStrategy: new LocalAuth({
         clientId: 'restaurante-session',
+        dataPath: './sessions/whatsapp',
       }),
       puppeteer: {
-        executablePath: '/usr/bin/chromium-browser', // o '/usr/bin/chromium' según "which"
-      headless: true,
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-accelerated-2d-canvas',
-        '--no-first-run',
-        '--no-zygote',
-        '--single-process', // Ayuda a consumir menos RAM en WSL
-        '--disable-gpu',
-        ],
-      },
+  headless: true,
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-accelerated-2d-canvas',
+    '--no-first-run',
+    '--no-zygote',
+    '--single-process', 
+    '--disable-gpu',
+    `--user-data-dir=/tmp/chromium-profile-${Date.now()}`,
+  ],
+},
+
     });
 
     this.client.on('qr', (qr) => {
