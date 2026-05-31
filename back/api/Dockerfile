@@ -3,8 +3,7 @@ FROM node:20-slim
 # Instalar Chromium y dependencias necesarias
 RUN apt-get update && apt-get install -y \
     chromium \
-    chromium-common \
-    chromium-driver \
+    chromium-browser \
     fonts-liberation \
     libatk-bridge2.0-0 \
     libatk1.0-0 \

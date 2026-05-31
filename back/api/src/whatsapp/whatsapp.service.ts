@@ -52,7 +52,7 @@ export class WhatsappService implements OnModuleInit, OnModuleDestroy {
     dataPath: './sessions/whatsapp',
   }),
   puppeteer: {
-    executablePath: '/usr/bin/chromium', 
+    executablePath: '/usr/bin/chromium-browser', 
     headless: true,
     args: [
       '--no-sandbox',
