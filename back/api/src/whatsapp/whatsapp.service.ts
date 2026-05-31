@@ -51,10 +51,10 @@ export class WhatsappService implements OnModuleInit, OnModuleDestroy {
     clientId: 'restaurante-session',
     dataPath: './sessions/whatsapp',
   }),
-  puppeteer: { 
-    headless: true,
-    args: [
-      '--no-sandbox',
+  puppeteer: {
+  headless: true,
+  args: [
+    '--no-sandbox',
     '--disable-setuid-sandbox',
     '--disable-dev-shm-usage',
     '--disable-accelerated-2d-canvas',
@@ -63,8 +63,9 @@ export class WhatsappService implements OnModuleInit, OnModuleDestroy {
     '--single-process',
     '--disable-gpu',
     `--user-data-dir=/tmp/chromium-profile-${Date.now()}`,
-    ],
-  },
+  ],
+}
+
 });
 
     this.client.on('qr', (qr) => {
