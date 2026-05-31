@@ -3,11 +3,6 @@ import { ConfigService } from '@nestjs/config';
 import { SupabaseService } from '../database/supabase.service';
 import { Client, LocalAuth, MessageMedia } from 'whatsapp-web.js';
 import * as qrcodeTerminal from 'qrcode-terminal';
-import { execSync } from 'child_process';
-
-const chromiumPath = execSync('which chromium || which chromium-browser')
-  .toString()
-  .trim();
 
 @Injectable()
 export class WhatsappService implements OnModuleInit, OnModuleDestroy {
@@ -57,7 +52,7 @@ export class WhatsappService implements OnModuleInit, OnModuleDestroy {
     dataPath: './sessions/whatsapp',
   }),
   puppeteer: {
-    executablePath: chromiumPath, 
+    executablePath: '/usr/bin/chromium', 
     headless: true,
     args: [
       '--no-sandbox',
