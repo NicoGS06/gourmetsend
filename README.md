@@ -9,7 +9,7 @@ GourmetSend es una solución de software Full Stack y desacoplada diseñada espe
 - **Frontend en producción:** https://gourmetsend.vercel.app/
 
 
-> ⚠️ **Nota de Infraestructura:** Debido a los requerimientos de procesamiento lógico, volumen de datos y aislamiento de procesos antibloqueo, el backend está diseñado arquitectónicamente para ser ejecutado en entornos locales contenerizados o servidores dedicados (requiere min. 1GB RAM). Por esta razón, se prioriza su ejecución distribuida mediante **Docker Compose** en lugar de servidores gratuitos con recursos limitados.
+> ⚠️ **Nota de Infraestructura:** Debido a los requerimientos de procesamiento lógico, volumen de datos y aislamiento de procesos antibloqueo, el backend está diseñado arquitectónicamente para ser ejecutado en entornos locales contenerizados o servidores dedicados (requiere min. 1GB RAM). Por esta razón, se prioriza su ejecución distribuida mediante **Docker** en lugar de servidores gratuitos con recursos limitados.
 
 ---
 
@@ -18,7 +18,7 @@ GourmetSend es una solución de software Full Stack y desacoplada diseñada espe
 - **Frontend:** React, Vite, TypeScript, Tailwind CSS
 - **Backend:** NestJS, Express.js, REST APIs
 - **Base de Datos:** PostgreSQL
-- **DevOps:** Docker (Servicios containerizados)
+- **DevOps:** Docker (Servidores contenerizados únicamente en el Backend)
 
 ---
 
@@ -26,21 +26,24 @@ GourmetSend es una solución de software Full Stack y desacoplada diseñada espe
 
 - **Arquitectura Desacoplada:** Separación total e independiente entre la interfaz de usuario (Frontend) y la lógica de negocio (Backend).
 - **Lógica Antibloqueo:** Algoritmos implementados para la gestión e intervalos de envío automatizado, cuidando la reputación de las cuentas comerciales.
-- **Entorno Containerizado:** Configuración completa mediante Docker para garantizar un despliegue idéntico y sin errores en desarrollo y producción.
+- **Entorno Contenerizado:** Configuración de Docker en el backend para garantizar un entorno de base de datos y servidor idéntico y sin errores.
 - **Gestión de Contactos:** API REST completa para realizar operaciones de creación, lectura, actualización y eliminación (CRUD) de clientes y campañas.
 
 ---
 
-## ⚙️ Arquitectura y Despliegue Local
+## ⚙️ Instalación y Ejecución Local
 
-El proyecto se encuentra totalmente estructurado para ser ejecutado localmente de forma rápida mediante contenedores.
+Dado que la plataforma cuenta con una arquitectura desacoplada, el entorno de desarrollo se ejecuta levantando el Backend en un contenedor de Docker y el Frontend de forma nativa con Node.js.
 
-### Requisitos previos
-- Node.js (v18 o superior)
-- Docker y Docker Compose
+### 1. Requisitos previos
+Asegúrate de tener instalado en tu máquina:
+- [Node.js](https://nodejs.org/) (Versión 18 o superior)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-### Instalación Pasos:
+---
 
-1. Clonar el repositorio:
+### 🚀 Paso 1: Levantar el Backend (Con Docker)
+
+1. Navega a la carpeta del servidor/backend desde la raíz del proyecto:
    ```bash
-   git clone [https://github.com/NicoGS06/gourmetsend.git](https://github.com/NicoGS06/gourmetsend.git)
+   cd backend
